@@ -88,11 +88,11 @@ module.exports = {
 
                 const embedMessage = new MessageEmbed()
                     .setColor(config.color.green)
-                    .setTitle('Generated Premium account')
+                    .setTitle('Generated Premium Account')
                     .setFooter(interaction.user.tag, interaction.user.displayAvatarURL({ dynamic: true, size: 64 }))
                     .setDescription('Thank you so much for being a premium member!')
-                    .addFields('Service', `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, true)
-                    .addFields('Account', `\`\`\`${generatedAccount}\`\`\``, true)
+                    .addField('Service', `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, true)
+                    .addField('Account', `\`\`\`${generatedAccount}\`\`\``, true)
                     .setImage(config.banner)
                     .setTimestamp();
 
