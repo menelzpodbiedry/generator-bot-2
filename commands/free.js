@@ -89,8 +89,8 @@ module.exports = {
                 const embedMessage = new MessageEmbed()
                     .setColor(config.color.green)
                     .setTitle('Generated Free account')
-                    .addField('Service', `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, true)
-                    .addField('Account', `\`\`\`${generatedAccount}\`\`\``, true)
+                    .addFields('Service', `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, true)
+                    .addFields('Account', `\`\`\`${generatedAccount}\`\`\``, true)
                     .setImage(config.banner)
                     .setTimestamp();
 
