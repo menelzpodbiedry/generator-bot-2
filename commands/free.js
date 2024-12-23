@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
-const fs = require('fs');
+const fs = require('fs/promises');
 const config = require('../config.json');
 const CatLoggr = require('cat-loggr');
 
@@ -20,91 +20,86 @@ module.exports = {
         const service = interaction.options.getString('service');
         const member = interaction.member;
 
-        // Check if the channel where the command was used is the generator channel
+        // Sprawdzenie poprawności kanału
         if (interaction.channelId !== config.genChannel) {
             const wrongChannelEmbed = new MessageEmbed()
                 .setColor(config.color.red)
                 .setTitle('Wrong command usage!')
                 .setDescription(`You cannot use the \`/free\` command in this channel! Try it in <#${config.genChannel}>!`)
-                .setFooter(interaction.user.tag, interaction.user.displayAvatarURL({ dynamic: true, size: 64 }))
+                .setFooter({ text: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true, size: 64 }) })
                 .setTimestamp();
 
             return interaction.reply({ embeds: [wrongChannelEmbed], ephemeral: true });
         }
 
-        // Check if the user has cooldown on the command
+        // Sprawdzenie cooldownu
         if (generated.has(member.id)) {
             const cooldownEmbed = new MessageEmbed()
                 .setColor(config.color.red)
                 .setTitle('Cooldown!')
                 .setDescription(`Please wait **${config.genCooldown}** seconds before executing that command again!`)
-                .setFooter(interaction.user.tag, interaction.user.displayAvatarURL({ dynamic: true, size: 64 }))
+                .setFooter({ text: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true, size: 64 }) })
                 .setTimestamp();
 
             return interaction.reply({ embeds: [cooldownEmbed], ephemeral: true });
         }
 
-        // File path to find the given service
         const filePath = `${__dirname}/../free/${service}.txt`;
 
-        // Read the service file
-        fs.readFile(filePath, 'utf-8', (error, data) => {
-            if (error) {
-                const notFoundEmbed = new MessageEmbed()
-                    .setColor(config.color.red)
-                    .setTitle('Generator error!')
-                    .setDescription(`Service \`${service}\` does not exist!`)
-                    .setFooter(interaction.user.tag, interaction.user.displayAvatarURL({ dynamic: true, size: 64 }))
-                    .setTimestamp();
+        try {
+            // Odczyt pliku usługi
+            const data = await fs.readFile(filePath, 'utf-8');
+            const lines = data.split(/\r?\n/).filter(line => line.trim());
 
-                return interaction.reply({ embeds: [notFoundEmbed], ephemeral: true });
-            }
-
-            const lines = data.split(/\r?\n/);
-
-            if (lines.length <= 1) {
+            if (lines.length === 0) {
                 const emptyServiceEmbed = new MessageEmbed()
                     .setColor(config.color.red)
                     .setTitle('Generator error!')
                     .setDescription(`The \`${service}\` service is empty!`)
-                    .setFooter(interaction.user.tag, interaction.user.displayAvatarURL({ dynamic: true, size: 64 }))
+                    .setFooter({ text: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true, size: 64 }) })
                     .setTimestamp();
 
                 return interaction.reply({ embeds: [emptyServiceEmbed], ephemeral: true });
             }
 
-            const generatedAccount = lines[0];
+            const generatedAccount = lines.shift();
 
-            // Remove the redeemed account line
-            lines.shift();
-            const updatedData = lines.join('\n');
+            // Zapis zaktualizowanych danych do pliku
+            await fs.writeFile(filePath, lines.join('\n'));
 
-            // Write the updated data back to the file
-            fs.writeFile(filePath, updatedData, (writeError) => {
-                if (writeError) {
-                    log.error(writeError);
-                    return interaction.reply('An error occurred while redeeming the account.');
-                }
+            const embedMessage = new MessageEmbed()
+                .setColor(config.color.green)
+                .setTitle('Generated Free Account')
+                .addFields(
+                    { name: 'Service', value: `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, inline: true },
+                    { name: 'Account', value: `\`\`\`${generatedAccount}\`\`\``, inline: true }
+                )
+                .setImage(config.banner)
+                .setTimestamp();
 
-                const embedMessage = new MessageEmbed()
-                    .setColor(config.color.green)
-                    .setTitle('Generated Free account')
-                    .addFields('Service', `\`\`\`${service[0].toUpperCase()}${service.slice(1).toLowerCase()}\`\`\``, true)
-                    .addFields('Account', `\`\`\`${generatedAccount}\`\`\``, true)
-                    .setImage(config.banner)
-                    .setTimestamp();
+            await member.send({ embeds: [embedMessage] });
 
-                member.send({ embeds: [embedMessage] })
-                    .catch(error => console.error(`Error sending embed message: ${error}`));
-                interaction.reply({
-                    content: `**Check your DM ${member}!** __If you do not receive the message, please unlock your private!__`,
-                });
-
-                generated.add(member.id);
-                setTimeout(() => {
-                    generated.delete(member.id);
-                }, config.genCooldown * 1000);
+            interaction.reply({
+                content: `**Check your DM ${member}!** __If you do not receive the message, please unlock your private messages!__`,
+                ephemeral: true,
             });
-        });
+
+            generated.add(member.id);
+            setTimeout(() => {
+                generated.delete(member.id);
+            }, config.genCooldown * 1000);
+        } catch (error) {
+            log.error(error);
+
+            const errorEmbed = new MessageEmbed()
+                .setColor(config.color.red)
+                .setTitle('Generator error!')
+                .setDescription(`Service \`${service}\` does not exist or an error occurred.`)
+                .setFooter({ text: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true, size: 64 }) })
+                .setTimestamp();
+
+            return interaction.reply({ embeds: [errorEmbed], ephemeral: true });
+        }
     },
 };
+                    
