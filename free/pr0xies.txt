@@ -1,0 +1,10 @@
+198.23.239.134:6540:molvprgw:igbbgctcpgi3
+207.244.217.165:6712:molvprgw:igbbgctcpgi3
+107.172.163.27:6543:molvprgw:igbbgctcpgi3
+64.137.42.112:5157:molvprgw:igbbgctcpgi3
+173.211.0.148:6641:molvprgw:igbbgctcpgi3
+161.123.152.115:6360:molvprgw:igbbgctcpgi3
+167.160.180.203:6754:molvprgw:igbbgctcpgi3
+154.36.110.199:6853:molvprgw:igbbgctcpgi3
+173.0.9.70:5653:molvprgw:igbbgctcpgi3
+173.0.9.209:5792:molvprgw:igbbgctcpgi3
