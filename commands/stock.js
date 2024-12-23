@@ -21,12 +21,12 @@ module.exports = {
 
 		if (freeStock.length > 0) {
 			const freeStockInfo = await getServiceInfo(`${__dirname}/../free/`, freeStock);
-			embed.addField('Free Services', freeStockInfo, true);
+			embed.addFields('Free Services', freeStockInfo, true);
 		}
 
 		if (premiumStock.length > 0) {
 			const premiumStockInfo = await getServiceInfo(`${__dirname}/../premium/`, premiumStock);
-			embed.addField('Premium Services', premiumStockInfo, true);
+			embed.addFields('Premium Services', premiumStockInfo, true);
 		}
 
 
