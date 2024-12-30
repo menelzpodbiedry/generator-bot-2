@@ -5,7 +5,7 @@
 
   "port": "3000",
   
-  "clientId": "1320461532664172575",
+  "clientId": "1323388273908777063",
   "guildId": "1314959878841831525",
   "globalDeploy": false, 
 
@@ -14,10 +14,10 @@
   "banner": "https://media.discordapp.net/attachments/960440723369517106/996423763522506782/rainbow-border.gif",
   "footer": "piterowyymarket.sellix.io",
 
-  "genChannel": "1320728936480510005",
-  "premiumChannel": "1320461217730658377",
-  "genCooldown": "120",
-  "premiumCooldown": "60",
+  "genChannel": "1323383755624284363",
+  "premiumChannel": "1323383755624284363",
+  "genCooldown": "30",
+  "premiumCooldown": "0",
 
   "color": {
     "green": "0x57F287",
