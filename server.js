@@ -122,7 +122,7 @@ app.get('/edit', requireLogin, (req, res) => {
           <link rel="icon" href="https://cdn.discordapp.com/attachments/1152538414017687684/1154710899525947422/gift.jpg" type="image/jpg">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/css/ionicons.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" type="text/css" href="https://cdn.discordapp.com/attachments/1149995606564151356/1153592485675798538/style.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ScienceGear/giftmaster-slash@main/youcandeletethis/style.css">
           </head>
           <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
           <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -143,7 +143,7 @@ app.get('/edit', requireLogin, (req, res) => {
             right: 20px; /* Adjust the right position as needed */
             text-align: center;
           }
-          
+
           .button {
             background-color: var(--blue);
             color: var(--white);
@@ -154,11 +154,11 @@ app.get('/edit', requireLogin, (req, res) => {
             font-size: 1rem;
             transition: background-color 0.3s ease-in-out;
           }
-          
+
           .button:hover {
             background-color: #1e177d; /* Darker shade of blue on hover */
           }
-          
+
           /* Popup Styles */
           .popup-container {
             display: none;
@@ -173,12 +173,12 @@ app.get('/edit', requireLogin, (req, res) => {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 9999; /* Ensure the popup is above other content */
           }
-          
+
           .popup-container h2 {
             font-size: 1.5rem;
             margin-bottom: 10px;
           }
-          
+
           .popup-container .close-button {
             position: absolute;
             top: 10px;
@@ -186,18 +186,18 @@ app.get('/edit', requireLogin, (req, res) => {
             cursor: pointer;
             font-size: 1.2rem;
           }
-          
+
           .popup-container .close-button:hover {
             color: var(--blue); /* Change the color on hover */
           }
-          
+
           /* Section Title Styles */
           .section-title {
             font-size: 1.5rem;
             color: var(--blue);
             margin-bottom: 10px;
           }
-          
+
           /* File List Styles */
           .files-section {
             margin-top: 20px;
@@ -206,7 +206,7 @@ app.get('/edit', requireLogin, (req, res) => {
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
           }
-          
+
           /* Updated Popup Styles */
           .popup-container {
             display: none;
@@ -222,18 +222,18 @@ app.get('/edit', requireLogin, (req, res) => {
             z-index: 9999;
             text-align: center;
           }
-          
+
           .popup-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--blue);
           }
-          
+
           /* File Select Dropdown Styles */
           .file-select {
             margin-bottom: 15px;
           }
-          
+
           .file-select select {
             width: 100%;
             padding: 10px;
@@ -244,17 +244,17 @@ app.get('/edit', requireLogin, (req, res) => {
             outline: none;
             transition: border-color 0.3s ease-in-out;
           }
-          
+
           .file-select select:focus {
             border-color: var(--blue);
           }
-          
+
           /* Input Field Styles */
           .fancy-input {
             position: relative;
             margin-bottom: 15px;
           }
-          
+
           .fancy-input input {
             width: 100%;
             padding: 10px 30px 10px 10px;
@@ -265,11 +265,11 @@ app.get('/edit', requireLogin, (req, res) => {
             outline: none;
             transition: border-color 0.3s ease-in-out;
           }
-          
+
           .fancy-input input:focus {
             border-color: var(--blue);
           }
-          
+
           /* Create Button Styles */
           .fancy-button {
             background-color: var(--blue);
@@ -281,17 +281,17 @@ app.get('/edit', requireLogin, (req, res) => {
             font-size: 1rem;
             transition: background-color 0.3s ease-in-out;
           }
-          
+
           .fancy-button:hover {
             background-color: #1e177d;
           }
-          
+
           /* Updated File List Styles */
           .file-list {
             list-style: none;
             padding: 0;
           }
-          
+
           .file-list li {
             display: flex;
             justify-content: space-between;
@@ -303,22 +303,22 @@ app.get('/edit', requireLogin, (req, res) => {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease-in-out;
           }
-          
+
           .file-list a {
             text-decoration: none;
             color: var(--blue);
             font-size: 1rem;
             transition: color 0.3s ease-in-out;
           }
-          
+
           .file-list li:hover {
             background-color: #f0f0f0; /* Change background color on hover */
           }
-          
+
           .file-list a:hover {
             color: var(--black1); /* Change text color on hover */
           }
-          
+
           /* Delete Button Styles */
           .delete-button {
             color: var(--red); /* Customize the delete button color */
@@ -326,7 +326,7 @@ app.get('/edit', requireLogin, (req, res) => {
             font-size: 1.2rem;
             transition: color 0.3s ease-in-out;
           }
-          
+
           .delete-button:hover {
             color: #ff0000; /* Change the color on hover */
           }
@@ -344,13 +344,13 @@ app.get('/edit', requireLogin, (req, res) => {
             transition: background-color 0.3s ease-in-out;
             border: 2px solid transparent; /* Initially, set a transparent border */
           }
-          
+
           .file-item .file-icon {
             margin-right: 10px;
             font-size: 24px;
             color: var(--blue); /* Icon color */
           }
-          
+
           .file-item .file-name {
             text-decoration: none;
             color: var(--blue);
@@ -361,18 +361,18 @@ app.get('/edit', requireLogin, (req, res) => {
             justify-content: flex-start; /* Align items to the left */
             flex-grow: 1; /* Allow the file name to take up available space */
           }
-          
+
           /* Add different border colors on hover for each file item */
           .file-item:nth-child(odd):hover {
             background-color: #f0f0f0; /* Change background color on hover for odd items */
             border-color: var(--blue); /* Border color on hover for odd items */
           }
-          
+
           .file-item:nth-child(even):hover {
             background-color: #f0f0f0; /* Change background color on hover for even items */
             border-color: var(--red); /* Border color on hover for even items */
           }
-          
+
           /* Style the Rename button */
           .rename-button {
             background-color: var(--green); /* Change to your desired color */
@@ -385,12 +385,12 @@ app.get('/edit', requireLogin, (req, res) => {
             margin-right: 5px; /* Add margin to separate buttons */
             transition: background-color 0.3s ease-in-out;
           }
-          
+
           .rename-button:hover {
             background-color: #1e177d; /* Darker shade of green on hover */
             color: var(--white); /* Change text color on hover */
           }
-          
+
           /* Style the Delete button */
           .delete-button {
             background-color: var(--red); /* Change to red color */
@@ -402,13 +402,13 @@ app.get('/edit', requireLogin, (req, res) => {
             font-size: 1rem;
             transition: background-color 0.3s ease-in-out;
           }
-          
+
           .delete-button:hover {
             background-color: #ff0000; /* Darker shade of red on hover */
             color: var(--white); /* Change text color on hover */
           }
-          
-         
+
+
           /* Modal styles */
 .modal {
   display: none;
@@ -474,7 +474,7 @@ h2 {
 }
 
 
-        
+
           </style>
           <body>
           <div class="container">
@@ -488,7 +488,7 @@ h2 {
                           <span class="title">Gift Master</span>
                       </a>
                   </li>
-  
+
                   <li>
                       <a href="/edit">
                           <span class="icon">
@@ -497,9 +497,9 @@ h2 {
                           <span class="title">Dashboard</span>
                       </a>
                   </li>
-  
-        
-  
+
+
+
                   <li>
                       <a href="help">
                           <span class="icon">
@@ -508,7 +508,7 @@ h2 {
                           <span class="title">Help</span>
                       </a>
                   </li>
-  
+
                   <li>
                       <a href="settings">
                           <span class="icon">
@@ -517,7 +517,7 @@ h2 {
                           <span class="title">Settings</span>
                       </a>
                   </li>
-  
+
                   <li>
                        <a href="/signout">
                           <span class="icon">
@@ -570,7 +570,7 @@ h2 {
                     </div>
                 </div>
             </div>
-  
+
             <div class="button-container">
   <button class="button" onclick="toggleCreateForm()">Create</button>
   <div class="popup-container" id="create-form-container">
@@ -591,14 +591,14 @@ h2 {
   </form>
     </div>
   </div>
-          
+
             <div class="files-section">
       <h2 class="section-title">Free Stock Files</h2>
       <ul class="file-list" id="stock-files">
               ${stockFileLinks}
               </ul>
               </div>
-          
+
               <div class="files-section">
       <h2 class="section-title">Premium Stock Files</h2>
       <ul class="file-list" id="pstock-files">
@@ -655,7 +655,7 @@ h2 {
 
 .inline-text {
   display: inline-block; /* Make the text inline */
-  margin-left: 5px; /* Add some spacing between "Subscribe to" and "Science Gear" */
+  margin-left: 5px; /* Add some spacing between "Made by" and "Science Gear" */
 }
 
 .floating-heart:hover {
@@ -668,9 +668,9 @@ h2 {
 </style>
 
 <div class="floating-heart">
-		<a href="https://youtube.com/@CyberSecDiscord" target="_blank"><i class="fab fa-youtube"></i></a>
-		<div class="tooltip">Subscribe to CyberSecDiscord</div>
-	  </div>
+    <i class="fas fa-heart"></i>
+    <div class="tooltip">Made with ❤️ By Science Gear</div>
+    </div>
 
 <script>
 // JavaScript for toggling the tooltip
@@ -733,7 +733,7 @@ toggle.onclick = function () {
               createFormContainer.style.display =
                 createFormContainer.style.display === "block" ? "none" : "block";
             }
-            
+
             // Close the popup when clicking outside of it (optional)
             window.addEventListener("click", function (event) {
               var createFormContainer = document.getElementById("create-form-container");
@@ -741,17 +741,17 @@ toggle.onclick = function () {
                 createFormContainer.style.display = "none";
               }
             });
-            
+
             function showCreateForm() {
               document.getElementById("create-form").style.display = "block";
               document.getElementById("rename-form").style.display = "none";
               document.getElementById("delete-form").style.display = "none";
             }
-            
+
             function createFile() {
               const folder = document.getElementById("create-folder-select").value;
               const fileName = document.getElementById("create-file-name").value;
-            
+
               // Send an AJAX request to the server to create the file
               fetch('/create', {
                 method: 'POST',
@@ -773,7 +773,7 @@ toggle.onclick = function () {
                   console.error('Error:', error);
                 });
             }            
-          
+
 
             // Open the rename modal
             // Open the rename modal with the selected file name
@@ -782,20 +782,20 @@ toggle.onclick = function () {
               const newFileNameInput = document.getElementById('newFileName');
               const folder = button.getAttribute('data-folder'); // Get the folder attribute
               const fileName = button.getAttribute('data-file');
-              
+
               // Set the input field to the current file name
               newFileNameInput.value = fileName;
-            
+
               // Update the onclick event of the "Rename" button in the modal
               const renameButton = document.getElementById('renameButton');
               renameButton.onclick = function () {
                 confirmRenameFile(folder, fileName); // Pass both folder and fileName
               };
-            
+
               modal.style.display = 'block';
             }
-            
-            
+
+
 
 // Close the rename modal
 function closeRenameModal() {
@@ -859,7 +859,7 @@ function confirmRenameFile(folder, fileName) {
                     });
                 }
               }
-          
+
               function deleteFile(folder, fileName) {
                 // Send an AJAX request to the server to delete the file
                 fetch('/delete', {
@@ -905,7 +905,7 @@ app.get('/help', requireLogin, (req, res) => {
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1152538414017687684/1154710899525947422/gift.jpg" type="image/jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.discordapp.com/attachments/1149995606564151356/1153592485675798538/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ScienceGear/giftmaster-slash@main/youcandeletethis/style.css">
   </head>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -926,7 +926,7 @@ app.get('/help', requireLogin, (req, res) => {
     right: 20px; /* Adjust the right position as needed */
     text-align: center;
   }
-  
+
   .button {
     background-color: var(--blue);
     color: var(--white);
@@ -937,11 +937,11 @@ app.get('/help', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .button:hover {
     background-color: #1e177d; /* Darker shade of blue on hover */
   }
-  
+
   /* Popup Styles */
   .popup-container {
     display: none;
@@ -956,12 +956,12 @@ app.get('/help', requireLogin, (req, res) => {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 9999; /* Ensure the popup is above other content */
   }
-  
+
   .popup-container h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
-  
+
   .popup-container .close-button {
     position: absolute;
     top: 10px;
@@ -969,18 +969,18 @@ app.get('/help', requireLogin, (req, res) => {
     cursor: pointer;
     font-size: 1.2rem;
   }
-  
+
   .popup-container .close-button:hover {
     color: var(--blue); /* Change the color on hover */
   }
-  
+
   /* Section Title Styles */
   .section-title {
     font-size: 1.5rem;
     color: var(--blue);
     margin-bottom: 10px;
   }
-  
+
   /* File List Styles */
   .files-section {
     margin-top: 20px;
@@ -989,7 +989,7 @@ app.get('/help', requireLogin, (req, res) => {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   /* Updated Popup Styles */
   .popup-container {
     display: none;
@@ -1005,18 +1005,18 @@ app.get('/help', requireLogin, (req, res) => {
     z-index: 9999;
     text-align: center;
   }
-  
+
   .popup-title {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--blue);
   }
-  
+
   /* File Select Dropdown Styles */
   .file-select {
     margin-bottom: 15px;
   }
-  
+
   .file-select select {
     width: 100%;
     padding: 10px;
@@ -1027,17 +1027,17 @@ app.get('/help', requireLogin, (req, res) => {
     outline: none;
     transition: border-color 0.3s ease-in-out;
   }
-  
+
   .file-select select:focus {
     border-color: var(--blue);
   }
-  
+
   /* Input Field Styles */
   .fancy-input {
     position: relative;
     margin-bottom: 15px;
   }
-  
+
   .fancy-input input {
     width: 100%;
     padding: 10px 30px 10px 10px;
@@ -1048,11 +1048,11 @@ app.get('/help', requireLogin, (req, res) => {
     outline: none;
     transition: border-color 0.3s ease-in-out;
   }
-  
+
   .fancy-input input:focus {
     border-color: var(--blue);
   }
-  
+
   /* Create Button Styles */
   .fancy-button {
     background-color: var(--blue);
@@ -1064,17 +1064,17 @@ app.get('/help', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .fancy-button:hover {
     background-color: #1e177d;
   }
-  
+
   /* Updated File List Styles */
   .file-list {
     list-style: none;
     padding: 0;
   }
-  
+
   .file-list li {
     display: flex;
     justify-content: space-between;
@@ -1086,22 +1086,22 @@ app.get('/help', requireLogin, (req, res) => {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .file-list a {
     text-decoration: none;
     color: var(--blue);
     font-size: 1rem;
     transition: color 0.3s ease-in-out;
   }
-  
+
   .file-list li:hover {
     background-color: #f0f0f0; /* Change background color on hover */
   }
-  
+
   .file-list a:hover {
     color: var(--black1); /* Change text color on hover */
   }
-  
+
   /* Delete Button Styles */
   .delete-button {
     color: var(--red); /* Customize the delete button color */
@@ -1109,7 +1109,7 @@ app.get('/help', requireLogin, (req, res) => {
     font-size: 1.2rem;
     transition: color 0.3s ease-in-out;
   }
-  
+
   .delete-button:hover {
     color: #ff0000; /* Change the color on hover */
   }
@@ -1127,13 +1127,13 @@ app.get('/help', requireLogin, (req, res) => {
     transition: background-color 0.3s ease-in-out;
     border: 2px solid transparent; /* Initially, set a transparent border */
   }
-  
+
   .file-item .file-icon {
     margin-right: 10px;
     font-size: 24px;
     color: var(--blue); /* Icon color */
   }
-  
+
   .file-item .file-name {
     text-decoration: none;
     color: var(--blue);
@@ -1144,18 +1144,18 @@ app.get('/help', requireLogin, (req, res) => {
     justify-content: flex-start; /* Align items to the left */
     flex-grow: 1; /* Allow the file name to take up available space */
   }
-  
+
   /* Add different border colors on hover for each file item */
   .file-item:nth-child(odd):hover {
     background-color: #f0f0f0; /* Change background color on hover for odd items */
     border-color: var(--blue); /* Border color on hover for odd items */
   }
-  
+
   .file-item:nth-child(even):hover {
     background-color: #f0f0f0; /* Change background color on hover for even items */
     border-color: var(--red); /* Border color on hover for even items */
   }
-  
+
   /* Style the Rename button */
   .rename-button {
     background-color: var(--green); /* Change to your desired color */
@@ -1168,12 +1168,12 @@ app.get('/help', requireLogin, (req, res) => {
     margin-right: 5px; /* Add margin to separate buttons */
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .rename-button:hover {
     background-color: #1e177d; /* Darker shade of green on hover */
     color: var(--white); /* Change text color on hover */
   }
-  
+
   /* Style the Delete button */
   .delete-button {
     background-color: var(--red); /* Change to red color */
@@ -1185,13 +1185,13 @@ app.get('/help', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .delete-button:hover {
     background-color: #ff0000; /* Darker shade of red on hover */
     color: var(--white); /* Change text color on hover */
   }
-  
- 
+
+
   /* Modal styles */
 .modal {
 display: none;
@@ -1461,11 +1461,11 @@ background-color: #0056b3;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   .floating-heart i {
     font-size: 24px;
   }
-  
+
   .tooltip {
     position: absolute;
     background-color: #333;
@@ -1478,44 +1478,44 @@ background-color: #0056b3;
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
-  
+
   .inline-text {
     display: inline-block; /* Make the text inline */
     margin-left: 5px; /* Add some spacing between "Made by" and "Science Gear" */
   }
-  
+
   .floating-heart:hover {
     background-color: #ff3333;
   }
-  
+
   .floating-heart:hover .tooltip {
     opacity: 1;
   }
   </style>
-  
+
   <div class="floating-heart">
-      <a href="https://youtube.com/@CyberSecDiscord" target="_blank"><i class="fab fa-youtube"></i></a>
-      <div class="tooltip">Subscribe to CyberSecDiscord</div>
+      <i class="fas fa-heart"></i>
+      <div class="tooltip">Made with ❤️ By Science Gear</div>
       </div>
-  
+
   <script>
   // JavaScript for toggling the tooltip
   const floatingHeart = document.querySelector('.floating-heart');
-  
+
   floatingHeart.addEventListener('click', () => {
     const tooltip = floatingHeart.querySelector('.tooltip');
     tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
   });
-  
+
   // Hide the tooltip initially
   document.addEventListener('DOMContentLoaded', () => {
     const tooltip = floatingHeart.querySelector('.tooltip');
     tooltip.style.display = 'none';
   });
-  
+
   </script>
-  
-  
+
+
 
     <script>
     // add hovered class to selected list item
@@ -1563,7 +1563,7 @@ app.get('/settings', requireLogin, (req, res) => {
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1152538414017687684/1154710899525947422/gift.jpg" type="image/jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.discordapp.com/attachments/1149995606564151356/1153592485675798538/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ScienceGear/giftmaster-slash@main/youcandeletethis/style.css">
   </head>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -1625,7 +1625,7 @@ app.get('/settings', requireLogin, (req, res) => {
         .card {
           margin-bottom: 20px; /* Add margin to the bottom of the card element */
       }
-      
+
       .settings-container {
           display: flex;
           justify-content: center;
@@ -1633,7 +1633,7 @@ app.get('/settings', requireLogin, (req, res) => {
           margin-top: 20px; /* Add margin to the top of the settings-container */
           margin-bottom: 20px; /* Add margin to the bottom of the settings-container */
       }
-      
+
 
         /* Add media queries for responsiveness */
         @media screen and (max-width: 600px) {
@@ -1665,7 +1665,7 @@ app.get('/settings', requireLogin, (req, res) => {
     right: 20px; /* Adjust the right position as needed */
     text-align: center;
   }
-  
+
   .button {
     background-color: var(--blue);
     color: var(--white);
@@ -1676,11 +1676,11 @@ app.get('/settings', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .button:hover {
     background-color: #1e177d; /* Darker shade of blue on hover */
   }
-  
+
   /* Popup Styles */
   .popup-container {
     display: none;
@@ -1695,12 +1695,12 @@ app.get('/settings', requireLogin, (req, res) => {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 9999; /* Ensure the popup is above other content */
   }
-  
+
   .popup-container h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
-  
+
   .popup-container .close-button {
     position: absolute;
     top: 10px;
@@ -1708,18 +1708,18 @@ app.get('/settings', requireLogin, (req, res) => {
     cursor: pointer;
     font-size: 1.2rem;
   }
-  
+
   .popup-container .close-button:hover {
     color: var(--blue); /* Change the color on hover */
   }
-  
+
   /* Section Title Styles */
   .section-title {
     font-size: 1.5rem;
     color: var(--blue);
     margin-bottom: 10px;
   }
-  
+
   /* File List Styles */
   .files-section {
     margin-top: 20px;
@@ -1728,7 +1728,7 @@ app.get('/settings', requireLogin, (req, res) => {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   /* Updated Popup Styles */
   .popup-container {
     display: none;
@@ -1744,18 +1744,18 @@ app.get('/settings', requireLogin, (req, res) => {
     z-index: 9999;
     text-align: center;
   }
-  
+
   .popup-title {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--blue);
   }
-  
+
   /* File Select Dropdown Styles */
   .file-select {
     margin-bottom: 15px;
   }
-  
+
   .file-select select {
     width: 100%;
     padding: 10px;
@@ -1766,17 +1766,17 @@ app.get('/settings', requireLogin, (req, res) => {
     outline: none;
     transition: border-color 0.3s ease-in-out;
   }
-  
+
   .file-select select:focus {
     border-color: var(--blue);
   }
-  
+
   /* Input Field Styles */
   .fancy-input {
     position: relative;
     margin-bottom: 15px;
   }
-  
+
   .fancy-input input {
     width: 100%;
     padding: 10px 30px 10px 10px;
@@ -1787,11 +1787,11 @@ app.get('/settings', requireLogin, (req, res) => {
     outline: none;
     transition: border-color 0.3s ease-in-out;
   }
-  
+
   .fancy-input input:focus {
     border-color: var(--blue);
   }
-  
+
   /* Create Button Styles */
   .fancy-button {
     background-color: var(--blue);
@@ -1803,17 +1803,17 @@ app.get('/settings', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .fancy-button:hover {
     background-color: #1e177d;
   }
-  
+
   /* Updated File List Styles */
   .file-list {
     list-style: none;
     padding: 0;
   }
-  
+
   .file-list li {
     display: flex;
     justify-content: space-between;
@@ -1825,22 +1825,22 @@ app.get('/settings', requireLogin, (req, res) => {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .file-list a {
     text-decoration: none;
     color: var(--blue);
     font-size: 1rem;
     transition: color 0.3s ease-in-out;
   }
-  
+
   .file-list li:hover {
     background-color: #f0f0f0; /* Change background color on hover */
   }
-  
+
   .file-list a:hover {
     color: var(--black1); /* Change text color on hover */
   }
-  
+
   /* Delete Button Styles */
   .delete-button {
     color: var(--red); /* Customize the delete button color */
@@ -1848,7 +1848,7 @@ app.get('/settings', requireLogin, (req, res) => {
     font-size: 1.2rem;
     transition: color 0.3s ease-in-out;
   }
-  
+
   .delete-button:hover {
     color: #ff0000; /* Change the color on hover */
   }
@@ -1866,13 +1866,13 @@ app.get('/settings', requireLogin, (req, res) => {
     transition: background-color 0.3s ease-in-out;
     border: 2px solid transparent; /* Initially, set a transparent border */
   }
-  
+
   .file-item .file-icon {
     margin-right: 10px;
     font-size: 24px;
     color: var(--blue); /* Icon color */
   }
-  
+
   .file-item .file-name {
     text-decoration: none;
     color: var(--blue);
@@ -1883,18 +1883,18 @@ app.get('/settings', requireLogin, (req, res) => {
     justify-content: flex-start; /* Align items to the left */
     flex-grow: 1; /* Allow the file name to take up available space */
   }
-  
+
   /* Add different border colors on hover for each file item */
   .file-item:nth-child(odd):hover {
     background-color: #f0f0f0; /* Change background color on hover for odd items */
     border-color: var(--blue); /* Border color on hover for odd items */
   }
-  
+
   .file-item:nth-child(even):hover {
     background-color: #f0f0f0; /* Change background color on hover for even items */
     border-color: var(--red); /* Border color on hover for even items */
   }
-  
+
   /* Style the Rename button */
   .rename-button {
     background-color: var(--green); /* Change to your desired color */
@@ -1907,12 +1907,12 @@ app.get('/settings', requireLogin, (req, res) => {
     margin-right: 5px; /* Add margin to separate buttons */
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .rename-button:hover {
     background-color: #1e177d; /* Darker shade of green on hover */
     color: var(--white); /* Change text color on hover */
   }
-  
+
   /* Style the Delete button */
   .delete-button {
     background-color: var(--red); /* Change to red color */
@@ -1924,13 +1924,13 @@ app.get('/settings', requireLogin, (req, res) => {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   .delete-button:hover {
     background-color: #ff0000; /* Darker shade of red on hover */
     color: var(--white); /* Change text color on hover */
   }
-  
- 
+
+
   /* Modal styles */
 .modal {
 display: none;
@@ -2196,9 +2196,9 @@ background-color: #0056b3;
 </style>
 
 <div class="floating-heart">
-		<a href="https://youtube.com/@CyberSecDiscord" target="_blank"><i class="fab fa-youtube"></i></a>
-		<div class="tooltip">Subscribe to CyberSecDiscord</div>
-	  </div>
+    <i class="fas fa-heart"></i>
+    <div class="tooltip">Made with ❤️ By Science Gear</div>
+    </div>
 
 <script>
 // JavaScript for toggling the tooltip
@@ -2573,9 +2573,9 @@ app.get('/edit/:folder/:filename', requireLogin, (req, res) => {
 </style>
 
 <div class="floating-heart">
-		<a href="https://youtube.com/@CyberSecDiscord" target="_blank"><i class="fab fa-youtube"></i></a>
-		<div class="tooltip">Subscribe to CyberSecDiscord</div>
-	  </div>
+    <i class="fas fa-heart"></i>
+    <div class="tooltip">Made with ❤️ By Science Gear</div>
+    </div>
 
 <script>
 // JavaScript for toggling the tooltip
@@ -2631,11 +2631,11 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                 background-color: #222;
                 color: #fff;
               }
-        
+
               h1 {
                 color: #4CAF50;
               }
-        
+
               .popup {
                 opacity: 0;
                 transform: scale(0);
@@ -2648,7 +2648,7 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                 justify-content: center;
                 height: 100vh;
               }
-        
+
               @keyframes fade-in {
                 0% {
                   opacity: 0;
@@ -2659,7 +2659,7 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                   transform: scale(1);
                 }
               }
-        
+
               .popup-icon {
                 font-size: 64px;
                 color: #4CAF50;
@@ -2668,7 +2668,7 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                 animation-duration: 0.5s;
                 animation-fill-mode: forwards;
               }
-        
+
               @keyframes checkmark-animation {
                 0% {
                   opacity: 0;
@@ -2679,12 +2679,12 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                   transform: scale(1);
                 }
               }
-        
+
               .popup-message {
                 font-size: 24px;
                 margin-bottom: 20px;
               }
-        
+
               .popup-button {
                 padding: 10px 20px;
                 background-color: #4CAF50;
@@ -2695,7 +2695,7 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
                 text-decoration: none;
                 transition: background-color 0.3s ease;
               }
-        
+
               .popup-button:hover {
                 background-color: #45a049;
               }
@@ -2757,9 +2757,9 @@ app.post('/save/:folder/:filename', requireLogin, (req, res) => {
 </style>
 
 <div class="floating-heart">
-		<a href="https://youtube.com/@CyberSecDiscord" target="_blank"><i class="fab fa-youtube"></i></a>
-		<div class="tooltip">Subscribe to CyberSecDiscord</div>
-	  </div>
+    <i class="fas fa-heart"></i>
+    <div class="tooltip">Made with ❤️ By Science Gear</div>
+    </div>
 
 <script>
 // JavaScript for toggling the tooltip
