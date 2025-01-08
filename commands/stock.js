@@ -26,17 +26,17 @@ module.exports = {
 			// Add free stock information
 			if (freeStock.length > 0) {
 				const freeStockInfo = await getServiceInfo(path.join(__dirname, '../free/'), freeStock);
-				embed.addFields('Free Services', freeStockInfo, true);
+				embed.addField('Free Services', freeStockInfo, true);
 			} else {
-				embed.addFields('Free Services', 'No services available.', true);
+				embed.addField('Free Services', 'No services available.', true);
 			}
 
 			// Add premium stock information
 			if (premiumStock.length > 0) {
 				const premiumStockInfo = await getServiceInfo(path.join(__dirname, '../premium/'), premiumStock);
-				embed.addFields('Premium Services', premiumStockInfo, true);
+				embed.addField('Premium Services', premiumStockInfo, true);
 			} else {
-				embed.addFields('Premium Services', 'No services available.', true);
+				embed.addField('Premium Services', 'No services available.', true);
 			}
 
 			// Reply with the embed
