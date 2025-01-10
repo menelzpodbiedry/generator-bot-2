@@ -21,7 +21,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity(`${config.status}`, { type: "WATCHING" }); // Set the bot's activity status
+  client.user.setActivity(`${config.status}`, { type: "STREAMING", url: "https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran"}); // Set the bot's activity status
     /* You can change the activity type to:
      * LISTENING
      * WATCHING
