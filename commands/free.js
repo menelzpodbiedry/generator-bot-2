@@ -81,7 +81,7 @@ module.exports = {
 
             interaction.reply({
                 content: `**Check your DM ${member}!** __If you do not receive the message, please unlock your private messages!__`,
-                ephemeral: true,
+                ephemeral: false,
             });
 
             generated.add(member.id);
